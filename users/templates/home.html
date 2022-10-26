@@ -4,12 +4,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>로그인 성공</title>
+    <title>프로필 페이지 입니다</title>
 </head>
 <body>
+    <H1>프로필 페이지입니다</H1>
+    <div>지금 로그인한 사용자는 {{ request.user }} 입니다</div>
+    <div>{{ request.user.email }}</div>
+    <div>{{ request.user.username }}</div>
+    <div>{{ request.user.nickname }}</div>
+    
+
+
+   
+    
+    <a href="{% url 'users:logout' %}">로그아웃</a>
+
+    <a href="{% url 'users:delte' %}">회원탈퇴</a>
+
+    <a href="{% url 'users:password' user.id %}">비밀번호 변경</a>
+
+    <a href="{% url 'users:detail' user.id %}">회원정보 변경</a>
 
     
-    {{ user }}
+    
+    
 
     
 </body>
